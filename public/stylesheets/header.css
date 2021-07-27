@@ -1,0 +1,228 @@
+/*BODY*/
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+/*CONTAINER*/
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex; /*ativa o flexbox*/
+  flex-wrap: wrap; /*quebra a linha*/
+  flex-direction: row; /*posicionamento dos elementos*/
+  justify-content: space-between; /*alinhar os elementos horizontalmente*/
+  align-items: center; /*alinhar os elementos verticalmente*/
+}
+
+/*FAIXA TOP*/
+
+.text {
+  padding-top: 15px;
+  margin-left: 30px;
+  color: #ec8213;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+
+.links_menu {
+  margin-right: 30px;
+  background: transparent;
+  color: #fd7e14;
+  display: inline-block;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 16px;
+  margin-bottom: 0;
+  padding: 0;
+  text-decoration: none;
+  border: white;
+}
+
+/* CABEÇALHO HEADER*/
+
+header {
+  border: solid 16px #00a3b4;
+  background-color: #00a3b4;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+}
+
+.headerContainer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex; /*ativa o flexbox*/
+  flex-wrap: wrap; /*quebra a linha*/
+  flex-direction: row; /*posicionamento dos elementos*/
+  justify-content: space-between; /*alinhar os elementos horizontalmente*/
+  align-items: center; /*alinhar os elementos verticalmente*/
+}
+
+.header_img {
+  max-width: 100vw;
+  width: 100px;
+  height: 100px;
+  max-height: 100vh;
+}
+
+.imgLogo {
+  max-width: 100vw;
+  width: 150px;
+  height: 150px;
+  max-height: 100vh;
+}
+
+.logo-image {
+  width: 150px;
+  height: 150px;
+  margin-left: 20px;
+}
+
+.busca {
+  background-color: #e0eeee;
+  border: solid 2px #5f9ea0;
+  border-radius: 10px;
+  max-width: 100vw;
+  margin-bottom: 15px;
+  width: 300px;
+  height: 32px;
+  max-height: 100vh;
+  position: relative;
+  bottom: 20px;
+}
+
+#txtBusca {
+  float: left;
+  background-color: transparent;
+  padding-left: 5px;
+  font-size: 18px;
+  border: none;
+  height: 32px;
+  width: 191px;
+}
+
+.btnBusca {
+  background: #ec8213
+    url(//cobasi.vteximg.com.br/arquivos/Branco-175xxxhdpi.png) 50%/20px
+    no-repeat;
+  border: 0;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  height: 90%;
+  outline: none;
+  right: 2px;
+  text-indent: -99999px;
+  top: 2px;
+  width: 60px;
+  width: 60px;
+  position: relative;
+  left: 40px;
+}
+
+.call-box {
+  max-width: 100vw;
+  width: 150px;
+  height: 30px;
+  max-height: 100vh;
+  display: flex;
+  margin-bottom: 55px;
+}
+
+#imgEntrar {
+  max-width: 100vw;
+  width: 30px;
+  height: 30px;
+  max-height: 100vh;
+}
+
+.range_item {
+  display: flex;
+}
+
+#btnBemVindo {
+  width: 80px;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+#btn-logout {
+  margin-right: 12px;
+  border: none;
+  color: #ec8213;
+  background-color: #fff;
+}
+
+#menu-responsivo,
+.dropdown-content {
+  visibility: hidden;
+}
+
+/*ativa a responsividade quando for colocada */
+@media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+      Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .imgLogo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .busca,
+  #btnBemVindo {
+    display: none;
+  }
+
+  .headerContainer {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .call-box {
+    display: none;
+  }
+
+  #menu-responsivo {
+    visibility: visible;
+    margin-bottom: 55px;
+  }
+
+  #btn-menu-responsivo {
+    color: whitesmoke;
+    border: none;
+    background-color: #00a3b4;
+  }
+}

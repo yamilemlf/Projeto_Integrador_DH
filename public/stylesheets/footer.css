@@ -1,0 +1,29 @@
+footer {
+    font-size: 12px;
+    color: grey;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.producers {
+    display: flex;
+    flex-direction: row;
+}
+
+.directors {
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    margin: 0px 10px;
+}

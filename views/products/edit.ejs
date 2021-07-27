@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edição de produto</title>
+    <link rel="stylesheet" href="/stylesheets/editProducts.css" />
+  </head>
+  <%- include('../partials/header') %>
+
+  <body> 
+    <main>
+      <div class="container-edit">
+        <h1 id="h1-produto">Edição de produto</h1>
+        <div class="tela-cadastro">
+            <div class="cadastro">
+              <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+                <div>
+                  <label class="id" for="id">Código do produto:</label>
+                  <input
+                    name="id"
+                    id="id"
+                    type="text"
+                    value="<%- product.id%>"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="name" for="name">Nome do produto:</label>
+                  <input
+                    name="name"
+                    id="name"
+                    type="text"
+                    value="<%- product.name %>"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="price" for="price">Preço do produto: </label>
+                  <input
+                    name="price"
+                    id="price"
+                    type="number"
+                    required
+                    value="<%- product.price %>"
+                  />
+                </div>
+                <div>
+                  <label class="description" for="description">Descrição: </label>
+                  <input
+                    name="description"
+                    id="description"
+                    type="text"
+                    required
+                    value="<%- product.description %>"
+                  />
+                </div>
+                <div>
+                  <div>
+                    <label>Tipo de produto:</label>
+                  </div>
+    
+
+              <% 
+              types.forEach(function(types) {
+                let checked = ""  
+                if(product.type === types.id){checked = "checked"}%>
+                  
+                  <div class="type-radio">
+                    <input
+                      type="radio"
+                      name="type"
+                      id="<%= types.id %>"
+                      value="<%= types.id %>"
+                    <%= checked %>
+                    />
+                    <label for="<%= types.id %>"> <%= types.id %> </label>
+                  </div>
+              <%}) %>
+                 
+                </div>
+                <div>
+                    <div >
+                        <a
+                          role="button"
+                          href="/products"
+                          type="reset"
+                          class="btn btn-danger"
+                          >Cancelar</a
+                        >
+                        <button type="submit" class="btn btn-primary">
+                          Atualizar
+                        </button>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      
+    </main>
+    <%- include('../partials/footer')%>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

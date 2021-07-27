@@ -1,0 +1,92 @@
+/*Título*/
+
+#h1-produto {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+/*Main*/
+
+.tela-cadastro {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/*Cards*/
+
+.products-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+  margin: 0 20%;
+}
+
+.card {
+  width: 180px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card .row div {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+/*Sessão de Cadastro*/
+
+.type-radio {
+  display: inline-flex;
+}
+
+.cadastro {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px;
+  padding: 25px 0px;
+  background-color: rgb(194, 194, 194);
+  font-weight: 500;
+}
+
+.cadastro form #name {
+  margin-bottom: 10px;
+}
+
+.cadastro form #price {
+  margin-bottom: 10px;
+}
+
+.cadastro form #description {
+  margin-bottom: 10px;
+}
+
+.cadastro form .price {
+  margin-right: 4px;
+}
+
+.cadastro form .description {
+  margin-right: 61px;
+}
+
+.cadastro form .type {
+  margin-bottom: 20px;
+}
+
+.cadastro form .titulo-cadastro {
+  margin-bottom: 7px;
+}
+
+.cadastro form .type-radio {
+  margin-right: 10px;
+}
+
+.cadastro form .type-radio label {
+  margin-left: 5px;
+}

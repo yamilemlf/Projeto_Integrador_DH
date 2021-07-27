@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, inicial-scale=1" />
+    <title>PetShop</title>
+    <link rel="stylesheet" href="../stylesheets/products.css" />
+  </head>
+  <%- include('./partials/header')%>
+  <body>
+    <h1 id="h1-produto">PRODUTOS</h1>
+    <main>
+      <div class="tela-cadastro">
+        <div class="products-list">
+          <% products.forEach(function(product){ %>
+          <div class="card">
+            <strong id="produto-nome"><%- product.name  %></strong>
+            <p>Preço: R$ <%- product.price %> <br />
+              Tipo: <%- product.type %><br />
+              <%- product.description %>
+              <br />
+            </p>
+
+            <div class="row">
+              <div >
+                <a
+                  role="button"
+                  href="/products/edit/<%-product.id%>"
+                  class="btn btn-warning"
+                >
+                  Editar
+                </a>
+              </div>
+              <div>
+                <form
+                  action="/products/<%= product.id %>?_method=DELETE"
+                  method="POST"
+                >
+                <!-- Gambiarra para fazer o DELETE funcionar no HTML; Isso + a instalação do methodOverride diz que POST é na verdade DELETE-->
+                  <input id="btn-excluir-cadastro" type="submit" value="Excluir" class="btn btn-danger"/>
+                </form>
+              </div>
+              
+            </div>
+            
+          </div>
+          <% }) %>
+        </div>
+        <div class="cadastro">
+          <form action="" method="POST">
+            <div>
+              <label for="name">Nome do produto:</label>
+              <input
+                name="name"
+                id="name"
+                type="text"
+                placeholder="Campo obrigatório"
+                required
+              />
+            </div>
+            <div>
+              <label class="price" for="price">Preço do produto: </label>
+              <input
+                name="price"
+                id="price"
+                type="number"
+                required
+                placeholder="Campo obrigatório"
+              />
+            </div>
+            <div>
+              <label class="description" for="description">Descrição: </label>
+              <input
+                name="description"
+                id="description"
+                type="text"
+                required
+                placeholder="Campo obrigatório"
+              />
+            </div>
+            <div>
+              <div>
+                <label class="titulo-cadastro">Tipo de produto:</label>
+              </div>
+
+              <% types.forEach(function(type) {%>
+                <div class="type-radio">
+                  <input
+                    class="type"
+                    type="radio"
+                    name="type"
+                    id="<%= type.id %>"
+                    value="<%= type.id %>"
+                  />
+                  <label for="<%= type.id %>"> <%= type.label %> </label>
+                </div>
+                <%}) %>
+              </div>
+            <div>
+              <input
+                type="submit"
+                value="Cadastrar produto"
+                class="btn btn-primary"
+              />
+              <input type="reset" value="Cancelar" class="btn btn-danger" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('./partials/footer')%>
+
+    <!-- Bootstrap and Javascript -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
